@@ -1,0 +1,331 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI', Arial, sans-serif;
+    margin:0;
+    background:#f7efe5;
+    color:#333;
+    transition:0.3s;
+}
+
+.dark{
+    background:#111;
+    color:white;
+}
+
+/* =========================
+   HEADER / NAVBAR
+========================= */
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 40px;
+    background:#d89c4a;
+    color:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+nav a{
+    margin:0 12px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    flex-wrap:wrap;
+    min-height:80vh;
+    padding:40px;
+}
+
+.heroText{
+    max-width:500px;
+}
+
+.heroText h1{
+    font-size:40px;
+}
+
+.heroText span{
+    color:#a05a2c;
+}
+
+.hero img{
+    width:350px;
+    animation:float 3s infinite ease-in-out;
+}
+
+@keyframes float{
+    0%{transform:translateY(0)}
+    50%{transform:translateY(-15px)}
+    100%{transform:translateY(0)}
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button{
+    background:#5c2b00;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:30px;
+    cursor:pointer;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+button:hover{
+    transform:scale(1.05);
+    background:#3e1c00;
+}
+
+/* =========================
+   SEARCH BAR
+========================= */
+
+.searchBox{
+    text-align:center;
+    margin:25px;
+}
+
+.searchBox input{
+    padding:12px 18px;
+    width:320px;
+    border-radius:25px;
+    border:none;
+    outline:none;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   FILTER BUTTONS
+========================= */
+
+.filters{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.filters button{
+    margin:5px;
+}
+
+/* =========================
+   PRODUCT GRID
+========================= */
+
+.products{
+    display:flex;
+    flex-wrap:wrap;
+    gap:25px;
+    padding:40px;
+    justify-content:center;
+}
+
+/* =========================
+   PRODUCT CARD (BASE)
+========================= */
+
+.card{
+    position:relative;
+    padding:20px;
+    border-radius:15px;
+    width:220px;
+    text-align:center;
+    transition:0.3s;
+    color:white;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 12px 25px rgba(0,0,0,0.25);
+}
+
+.card img{
+    width:100%;
+    border-radius:10px;
+}
+
+.price{
+    font-size:18px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+/* =========================
+   COOKIE COLORS
+========================= */
+
+/* 🍪 Chocolate Chip */
+.chocolate{
+    background:linear-gradient(135deg,#5c2b00,#a05a2c);
+}
+
+/* ❤️ Red Velvet */
+.redvelvet{
+    background:linear-gradient(135deg,#e52d27,#b31217);
+}
+
+/* 🌾 Healthy Oatmeal */
+.healthy{
+    background:linear-gradient(135deg,#a1887f,#d7ccc8);
+    color:#3e2723;
+}
+
+/* 🍫 Double Chocolate */
+.doublechoco{
+    background:linear-gradient(135deg,#2c1810,#6d4c41);
+}
+
+/* 🍫 Nutella */
+.premium{
+    background:linear-gradient(135deg,#4e342e,#a1887f);
+}
+
+/* 🌰 Almond */
+.almond{
+    background:linear-gradient(135deg,#d4a373,#ffe0b2);
+    color:#5c2b00;
+}
+
+/* =========================
+   BADGE
+========================= */
+
+.badge{
+    background:red;
+    color:white;
+    padding:4px 8px;
+    border-radius:10px;
+    font-size:12px;
+    position:absolute;
+    top:10px;
+    left:10px;
+}
+
+/* =========================
+   CART PAGE
+========================= */
+
+#cartItems{
+    list-style:none;
+    padding:0;
+}
+
+#cartItems li{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:white;
+    padding:15px;
+    margin-bottom:10px;
+    border-radius:10px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.1);
+}
+
+.dark #cartItems li{
+    background:#222;
+}
+
+/* =========================
+   FEATURES SECTION
+========================= */
+
+.features{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:40px;
+    flex-wrap:wrap;
+}
+
+.feature{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    width:250px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.dark .feature{
+    background:#222;
+}
+
+/* =========================
+   CTA SECTION
+========================= */
+
+.cta{
+    text-align:center;
+    padding:60px;
+    background:#d89c4a;
+    color:white;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#333;
+    color:white;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media(max-width:768px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero img{
+width:250px;
+margin-top:20px;
+}
+
+.products{
+padding:20px;
+}
+
+.searchBox input{
+width:80%;
+}
+
+header{
+flex-direction:column;
+gap:10px;
+}
+
+}

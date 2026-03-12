@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Menu - Crunch Cookies</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<h2>🍪 crunchCookies</h2>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+<button onclick="toggleDark()">🌙</button>
+</nav>
+
+</header>
+
+
+<!-- ================= PAGE TITLE ================= -->
+
+<h1 style="text-align:center;margin-top:20px;">Our Premium Cookies</h1>
+
+
+<!-- ================= SEARCH BAR ================= -->
+
+<div class="searchBox">
+<input type="text" placeholder="Search cookies..." onkeyup="searchProduct(this.value)">
+</div>
+
+
+<!-- ================= FILTER BUTTONS ================= -->
+
+<div class="filters">
+
+<button onclick="filter('all')">All</button>
+<button onclick="filter('chocolate')">Chocolate</button>
+<button onclick="filter('premium')">Premium</button>
+<button onclick="filter('healthy')">Healthy</button>
+
+</div>
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<div class="products" id="products">
+
+
+<!-- Chocolate Chip -->
+<div class="card chocolate">
+<span class="badge">🔥 Bestseller</span>
+<img src="images/cookie1.png">
+<h3>Chocolate Chip</h3>
+<p>⭐⭐⭐⭐⭐</p>
+<p class="price">₹120</p>
+<button onclick="flyToCart(event,'Chocolate Chip',120)">Add to Cart</button>
+</div>
+
+
+<!-- Red Velvet -->
+<div class="card premium">
+<img src="images/cookie2.png">
+<h3>Red Velvet Cookie</h3>
+<p>⭐⭐⭐⭐</p>
+<p class="price">₹220</p>
+<button onclick="flyToCart(event,'Red Velvet Cookie',220)">Add to Cart</button>
+</div>
+
+
+<!-- Oatmeal Healthy -->
+<div class="card healthy">
+<img src="images/cookie3.png">
+<h3>Oatmeal Healthy</h3>
+<p>⭐⭐⭐⭐</p>
+<p class="price">₹140</p>
+<button onclick="flyToCart(event,'Oatmeal Healthy',140)">Add to Cart</button>
+</div>
+
+
+<!-- Double Chocolate -->
+<div class="card chocolate">
+<img src="images/cookie4.png">
+<h3>Double Chocolate</h3>
+<p>⭐⭐⭐⭐⭐</p>
+<p class="price">₹180</p>
+<button onclick="flyToCart(event,'Double Chocolate',180)">Add to Cart</button>
+</div>
+
+
+<!-- Nutella Filled -->
+<div class="card premium">
+<img src="images/cookie5.png">
+<h3>Nutella Filled</h3>
+<p>⭐⭐⭐⭐⭐</p>
+<p class="price">₹240</p>
+<button onclick="flyToCart(event,'Nutella Filled',240)">Add to Cart</button>
+</div>
+
+
+<!-- Almond Protein -->
+<div class="card healthy">
+<img src="images/cookie6.png">
+<h3>Almond Protein Cookie</h3>
+<p>⭐⭐⭐⭐</p>
+<p class="price">₹160</p>
+<button onclick="flyToCart(event,'Almond Protein Cookie',160)">Add to Cart</button>
+</div>
+
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer style="text-align:center;padding:20px;margin-top:40px;">
+<p>© 2026 Crunch Cookies | Made with ❤️</p>
+</footer>
+
+
+<!-- ================= SCRIPT ================= -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

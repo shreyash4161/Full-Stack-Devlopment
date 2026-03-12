@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Cart - Crunch Cookies</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<h2>🍪 crunchCookies</h2>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="cart.html">Cart (<span id="cartCount">0</span>)</a>
+<button onclick="toggleDark()">🌙</button>
+</nav>
+
+</header>
+
+
+<!-- ================= CART SECTION ================= -->
+
+<h1 style="text-align:center;margin-top:30px;">🛒 Your Cart</h1>
+
+<div style="max-width:800px;margin:auto;padding:20px;">
+
+<ul id="cartItems" style="list-style:none;padding:0;"></ul>
+
+<h3 id="total" style="margin-top:20px;"></h3>
+
+<div style="margin-top:20px;">
+<button onclick="clearCart()">Clear Cart</button>
+<a href="menu.html">
+<button>Continue Shopping</button>
+</a>
+</div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer style="text-align:center;padding:20px;margin-top:40px;">
+<p>© 2026 Crunch Cookies | Made with ❤️</p>
+</footer>
+
+
+<!-- ================= SCRIPT ================= -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
