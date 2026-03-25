@@ -1,16 +1,15 @@
-# 🍪 Crunch Cookies – E-Commerce Website
+# 🍪 Assignment 3: Crunch Cookies E-Commerce Website
 
-A modern and responsive **E-Commerce website for cookies** built using **HTML, CSS, and JavaScript**.
-This project showcases a complete front-end shopping experience including product listing and cart functionality.
+This assignment demonstrates the development of a simple **E-Commerce website** using **HTML, CSS, and JavaScript**, focusing on product display and basic cart functionality.
 
 ---
 
 ## 🎯 Objective
 
-* Build a simple E-Commerce website
+* Create a simple E-Commerce website
 * Display products with images and details
 * Implement basic cart functionality
-* Design a clean and attractive UI
+* Design a clean and user-friendly UI
 
 ---
 
@@ -24,12 +23,31 @@ This project showcases a complete front-end shopping experience including produc
 
 ## ✨ Features
 
-* 🍪 Attractive cookie product listings
-* 🖼️ Product images for each item
-* 🛒 Add to cart functionality
-* 📄 Multiple pages (Home, Menu, Cart)
-* 🎨 Clean and modern UI design
-* ⚡ Interactive elements using JavaScript
+* Attractive cookie product listings 🍪
+* Multiple pages (Home, Menu, Cart)
+* Product images for each item
+* Add to cart functionality 🛒
+* Clean and modern UI design
+* Interactive elements using JavaScript
+
+---
+
+## 📋 Functionalities Implemented
+
+### 🔹 Home Page (`index.html`)
+
+* Displays hero section and introduction
+* Navigation to other pages
+
+### 🔹 Menu Page (`menu.html`)
+
+* Displays all cookie products
+* Includes product name, image, and price
+
+### 🔹 Cart Page (`cart.html`)
+
+* Shows selected items
+* Displays cart details
 
 ---
 
@@ -46,70 +64,37 @@ Assignment-3-Ecommerce/
  │    ├── cookie6.png
  │    └── hero-cookie.png
  │
- ├── index.html      # Home Page
- ├── menu.html       # Product Listing Page
- ├── cart.html       # Cart Page
- ├── style.css       # Styling
- ├── script.js       # Functionality
+ ├── index.html
+ ├── menu.html
+ ├── cart.html
+ ├── style.css
+ ├── script.js
  └── README.md
 ```
 
 ---
 
-## 🌐 Pages Description
+## 🌐 Output
 
-* **Home (index.html)**
-  Displays hero section and introduction to the website
+Displays a complete **cookie shopping website** where users can:
 
-* **Menu (menu.html)**
-  Shows all available cookie products with images and details
-
-* **Cart (cart.html)**
-  Displays selected items added to cart
-
----
-
-## 🚀 How to Run
-
-1. Download or clone the repository
-2. Open the folder:
-
-   ```
-   Assignment-3-Ecommerce
-   ```
-3. Open:
-
-   ```
-   index.html
-   ```
-
-   OR run using Live Server in VS Code
-
----
-
-## 📸 Output
-
-A visually appealing **cookie shop website** where users can:
-
-* Browse cookies 🍪
-* View product details
+* Browse products 🍪
+* View details
 * Add items to cart 🛒
 
 ---
 
 ## 📌 Conclusion
 
-This project demonstrates:
+This assignment helps in understanding:
 
-* Frontend development using HTML, CSS, JS
-* Basic E-Commerce website structure
-* UI/UX design principles
-* DOM interaction using JavaScript
+* Structure of multi-page websites
+* Frontend design using HTML and CSS
+* Basic interactivity using JavaScript
+* Fundamentals of E-Commerce UI development
 
 ---
 
 ## 👨‍💻 Author
 
 **Shreyash Chaudhari**
-
----
