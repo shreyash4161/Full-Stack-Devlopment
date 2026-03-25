@@ -99,5 +99,3 @@ This assignment helps in understanding the **basic structure of HTML**, differen
 ## 👨‍💻 Author
 
 **Shreyash Chaudhari**
-
----like this format
