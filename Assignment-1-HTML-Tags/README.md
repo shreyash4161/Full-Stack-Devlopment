@@ -1,76 +1,101 @@
-# 📄 HTML Text Formatting Tags Table
+# 🧾 Assignment 1: HTML Text Formatting Tags
 
-A simple and clean web page that demonstrates various **HTML text formatting tags** using a structured table and modern CSS styling.
-
----
-
-## 🚀 Features
-
-* Displays commonly used HTML text formatting tags
-* Clean and minimal UI design
-* Responsive table layout
-* Hover effects for better user interaction
-* Easy to understand examples for each tag
+This assignment demonstrates the use of various **HTML text formatting tags** along with basic **CSS styling, selectors, colors, and fonts**.
 
 ---
 
-## 🧑‍💻 Technologies Used
+## 🎯 Objective
+
+* Create a simple webpage
+* Apply background color and styling
+* Use different HTML text formatting tags
+* Implement CSS selectors (Element, Class, ID)
+
+---
+
+## 🛠️ Technologies Used
 
 * HTML5
 * CSS3
 
 ---
 
-## 📋 Tags Covered
+## ✨ Features
 
-* `<b>` – Bold Text
-* `<strong>` – Important Text
-* `<i>` – Italic Text
-* `<em>` – Emphasized Text
-* `<u>` – Underlined Text
-* `<mark>` – Highlighted Text
-* `<small>` – Small Text
-* `<del>` – Deleted Text
-* `<ins>` – Inserted Text
+* Clean and responsive table layout
+* Styled heading using **ID selector**
+* Styled table using **Class selector**
+* Hover effects for better UI
+* Use of multiple HTML formatting tags
+
+---
+
+## 📋 Tags Implemented
+
+### 🔹 Basic Formatting
+
+* `<b>` – Bold
+* `<strong>` – Important text
+* `<i>` – Italic
+* `<em>` – Emphasized
+* `<u>` – Underlined
+
+### 🔹 Text Styling
+
+* `<mark>` – Highlighted
+* `<small>` – Small text
+* `<del>` – Deleted text
+* `<ins>` – Inserted text
+
+### 🔹 Scientific Formatting
+
 * `<sub>` – Subscript
 * `<sup>` – Superscript
+
+### 🔹 Code & Layout
+
+* `<code>` – Code text
+* `<pre>` – Preformatted text
+* `<br>` – Line break
+
+### 🔹 Quotations
+
+* `<q>` – Short quote
+* `<blockquote>` – Block quote
+
+### 🔹 Miscellaneous
+
+* `<abbr>` – Abbreviation
+* `<cite>` – Citation
 
 ---
 
 ## 📂 Project Structure
 
-```
-📁 html-formatting-table
+```bash
+Assignment-1-HTML-Tags/
  ├── index.html
  └── README.md
 ```
 
 ---
 
-## 🌐 Live Demo
+## 🌐 Output
 
-After enabling GitHub Pages, your project will be available at:
+Displays a structured table showing:
 
-```
-https://your-username.github.io/html-formatting-table/
-```
-
----
-
-## 📸 Preview
-
-A simple table showcasing different HTML text formatting tags with examples.
+* HTML Tag
+* Description
+* Example Output
 
 ---
 
-## ✨ Author
+## 📌 Conclusion
+
+This assignment helps in understanding the **basic structure of HTML**, different **text formatting tags**, and the use of **CSS selectors and styling techniques**.
+
+---
+
+## 👨‍💻 Author
 
 **Shreyash Chaudhari**
-
----
-
-## 📌 Notes
-
-This project is created for learning and academic purposes to understand HTML text formatting tags in a simple and visual way.
-
----

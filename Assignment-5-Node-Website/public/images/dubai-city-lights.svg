@@ -1,0 +1,25 @@
+﻿<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="dubaiSky" x1="150" y1="92" x2="1048" y2="662" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD6BE"/>
+      <stop offset="0.58" stop-color="#F6B08C"/>
+      <stop offset="1" stop-color="#D98F69"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#dubaiSky)"/>
+  <circle cx="1026" cy="150" r="82" fill="#FFE3A1" fill-opacity="0.95"/>
+  <path d="M0 574C132 552 232 540 362 549C533 560 638 652 799 661C934 669 1059 621 1200 600V800H0V574Z" fill="#A9653E"/>
+  <path d="M0 664C178 632 336 624 498 650C621 670 758 704 919 696C1022 691 1111 669 1200 642V800H0V664Z" fill="#8C5536"/>
+  <rect x="138" y="336" width="92" height="238" fill="#695665"/>
+  <rect x="244" y="254" width="116" height="320" fill="#536A79"/>
+  <rect x="378" y="212" width="80" height="362" fill="#3D4C57"/>
+  <rect x="476" y="288" width="104" height="286" fill="#6A7C87"/>
+  <rect x="606" y="168" width="40" height="406" fill="#283640"/>
+  <rect x="664" y="318" width="84" height="256" fill="#7D8B95"/>
+  <rect x="770" y="246" width="120" height="328" fill="#4F6875"/>
+  <rect x="910" y="344" width="86" height="230" fill="#7A665C"/>
+  <rect x="1016" y="280" width="56" height="294" fill="#5A6E79"/>
+  <rect x="582" y="120" width="20" height="454" fill="#364650"/>
+  <path d="M596 120L580 74H612L596 120Z" fill="#364650"/>
+  <ellipse cx="622" cy="650" rx="314" ry="28" fill="#6C3F28" fill-opacity="0.22"/>
+</svg>
