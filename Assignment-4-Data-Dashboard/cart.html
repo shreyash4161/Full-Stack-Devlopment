@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crunch Cookies Cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="site-shell">
+        <header class="site-header">
+            <a class="brand" href="index.html">
+                <span class="brand-mark">Fresh batch</span>
+                <strong>Crunch Cookies</strong>
+            </a>
+            <nav class="site-nav">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="menu.html">Menu</a>
+                <a class="nav-link active" href="cart.html">Cart <span class="count-pill" id="cartCount">0</span></a>
+                <button class="theme-toggle" type="button" onclick="toggleDark()">Theme</button>
+            </nav>
+        </header>
+
+        <main>
+            <section class="page-hero compact">
+                <div>
+                    <p class="eyebrow">Cart summary</p>
+                    <h1>Your cookie order, ready for checkout.</h1>
+                    <p class="hero-description">
+                        Review items, adjust your flow, and place the order to push fresh sales data into the dashboard.
+                    </p>
+                </div>
+                <a class="btn btn-secondary" href="menu.html">Continue shopping</a>
+            </section>
+
+            <section class="cart-layout">
+                <div class="cart-list-panel">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Selected items</p>
+                            <h2>Cart items</h2>
+                        </div>
+                    </div>
+                    <ul id="cartItems" class="cart-items"></ul>
+                </div>
+
+                <aside class="order-summary">
+                    <p class="eyebrow">Order summary</p>
+                    <h2>Fresh batch checkout</h2>
+                    <div class="summary-row">
+                        <span>Items in cart</span>
+                        <strong id="summaryCount">0</strong>
+                    </div>
+                    <div class="summary-row">
+                        <span>Estimated prep</span>
+                        <strong>15 mins</strong>
+                    </div>
+                    <div class="summary-total" id="total">Total: Rs 0</div>
+                    <div class="summary-actions">
+                        <button class="btn btn-secondary" type="button" onclick="clearCart()">Clear cart</button>
+                        <button class="btn btn-primary" type="button" onclick="placeOrder()">Place order</button>
+                    </div>
+                    <p class="summary-note">Orders placed here are stored locally and reflected in the analytics dashboard.</p>
+                </aside>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>2026 Crunch Cookies. Freshly baked for every order.</p>
+        </footer>
+    </div>
+
+    <div id="successPopup" class="popup">
+        <div class="popup-content">
+            <p class="eyebrow">Order confirmed</p>
+            <h2>Fresh cookies are on the way.</h2>
+            <p>Your order was saved and the dashboard will update next.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

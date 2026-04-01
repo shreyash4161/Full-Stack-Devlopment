@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crunch Cookies Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="site-shell">
+        <header class="site-header">
+            <a class="brand" href="index.html">
+                <span class="brand-mark">Fresh batch</span>
+                <strong>Crunch Cookies</strong>
+            </a>
+            <nav class="site-nav">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link active" href="menu.html">Menu</a>
+                <a class="nav-link" href="cart.html">Cart <span class="count-pill" id="cartCount">0</span></a>
+                <button class="theme-toggle" type="button" onclick="toggleDark()">Theme</button>
+            </nav>
+        </header>
+
+        <main>
+            <section class="page-hero compact">
+                <div>
+                    <p class="eyebrow">Cookie menu</p>
+                    <h1>Choose your next warm-batch favorite.</h1>
+                    <p class="hero-description">
+                        Search, filter, and build your order from signature flavors, premium filled cookies, and lighter crunchy options.
+                    </p>
+                </div>
+                <a class="btn btn-secondary" href="cart.html">Go to cart</a>
+            </section>
+
+            <section class="controls-panel">
+                <div class="search-field">
+                    <label for="productSearch">Search cookies</label>
+                    <input id="productSearch" type="text" placeholder="Try chocolate, oatmeal, almond..." onkeyup="searchProduct(this.value)">
+                </div>
+                <div class="filter-group">
+                    <button class="filter-btn active" type="button" onclick="filter('all', this)">All</button>
+                    <button class="filter-btn" type="button" onclick="filter('chocolate', this)">Chocolate</button>
+                    <button class="filter-btn" type="button" onclick="filter('premium', this)">Premium</button>
+                    <button class="filter-btn" type="button" onclick="filter('healthy', this)">Healthy</button>
+                </div>
+            </section>
+
+            <section class="product-grid menu-grid products" id="products">
+                <article class="product-card menu-card product-item chocolate accent-chocolate">
+                    <span class="product-tag">Best seller</span>
+                    <img src="images/cookie1.png" alt="Chocolate Chip">
+                    <div class="product-copy">
+                        <h3>Chocolate Chip</h3>
+                        <p>Classic soft-center cookie with deep caramel edges and chocolate pockets.</p>
+                        <div class="rating-row">
+                            <span>5.0 rating</span>
+                            <span>Chocolate</span>
+                        </div>
+                        <div class="product-actions">
+                            <strong>Rs 120</strong>
+                            <button type="button" onclick="flyToCart(event, 'Chocolate Chip', 120)">Add to cart</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card menu-card product-item premium accent-berry">
+                    <span class="product-tag">Premium</span>
+                    <img src="images/cookie2.png" alt="Red Velvet Cookie">
+                    <div class="product-copy">
+                        <h3>Red Velvet Cookie</h3>
+                        <p>Bold cocoa profile with creamy richness and a polished dessert finish.</p>
+                        <div class="rating-row">
+                            <span>4.8 rating</span>
+                            <span>Premium</span>
+                        </div>
+                        <div class="product-actions">
+                            <strong>Rs 220</strong>
+                            <button type="button" onclick="flyToCart(event, 'Red Velvet Cookie', 220)">Add to cart</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card menu-card product-item healthy accent-oat">
+                    <span class="product-tag">Balanced</span>
+                    <img src="images/cookie3.png" alt="Oatmeal Healthy">
+                    <div class="product-copy">
+                        <h3>Oatmeal Healthy</h3>
+                        <p>Toasted oat cookie with a wholesome crunch and lighter sweetness.</p>
+                        <div class="rating-row">
+                            <span>4.7 rating</span>
+                            <span>Healthy</span>
+                        </div>
+                        <div class="product-actions">
+                            <strong>Rs 140</strong>
+                            <button type="button" onclick="flyToCart(event, 'Oatmeal Healthy', 140)">Add to cart</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card menu-card product-item chocolate accent-dark">
+                    <span class="product-tag">Rich cocoa</span>
+                    <img src="images/cookie4.png" alt="Double Chocolate">
+                    <div class="product-copy">
+                        <h3>Double Chocolate</h3>
+                        <p>Extra chocolate depth with a denser, fudgier bite for serious cravings.</p>
+                        <div class="rating-row">
+                            <span>5.0 rating</span>
+                            <span>Chocolate</span>
+                        </div>
+                        <div class="product-actions">
+                            <strong>Rs 180</strong>
+                            <button type="button" onclick="flyToCart(event, 'Double Chocolate', 180)">Add to cart</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card menu-card product-item premium accent-hazelnut">
+                    <span class="product-tag">Filled center</span>
+                    <img src="images/cookie5.png" alt="Nutella Filled">
+                    <div class="product-copy">
+                        <h3>Nutella Filled</h3>
+                        <p>Soft outer shell with a molten hazelnut-chocolate center.</p>
+                        <div class="rating-row">
+                            <span>4.9 rating</span>
+                            <span>Premium</span>
+                        </div>
+                        <div class="product-actions">
+                            <strong>Rs 240</strong>
+                            <button type="button" onclick="flyToCart(event, 'Nutella Filled', 240)">Add to cart</button>
+                        </div>
+                    </div>
+                </article>
+                <article class="product-card menu-card product-item healthy accent-almond">
+                    <span class="product-tag">Protein pick</span>
+                    <img src="images/cookie6.png" alt="Almond Protein Cookie">
+                    <div class="product-copy">
+                        <h3>Almond Protein Cookie</h3>
+                        <p>Nutty, crunchy, and satisfying with a clean bakery-style finish.</p>
+                        <div class="rating-row">
+                            <span>4.7 rating</span>
+                            <span>Healthy</span>
+                        </div>
+                        <div class="product-actions">
+                            <strong>Rs 160</strong>
+                            <button type="button" onclick="flyToCart(event, 'Almond Protein Cookie', 160)">Add to cart</button>
+                        </div>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>2026 Crunch Cookies. Freshly baked for every order.</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

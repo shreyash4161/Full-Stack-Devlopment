@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crunch Cookies Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-shell">
+        <aside class="sidebar">
+            <div class="brand-block">
+                <span class="brand-chip">Fresh batch</span>
+                <h1>Crunch Cookies</h1>
+                <p>Analytics baked with a warm storefront feel.</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <button class="nav-item active" type="button">Dashboard</button>
+                <button class="nav-item" type="button" onclick="goToShop()">Shop</button>
+            </nav>
+
+            <div class="sidebar-card">
+                <p class="eyebrow">Today's focus</p>
+                <h2 id="focusTitle">Signature chocolate chip is leading</h2>
+                <p id="focusText">Track orders, revenue, and product performance in one place.</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="hero-panel">
+                <div class="hero-copy">
+                    <p class="eyebrow">Dashboard overview</p>
+                    <h2>Premium cookie performance, styled like the product itself.</h2>
+                    <p class="hero-text">
+                        A cleaner control room for revenue, basket size, flavor demand, and recent orders.
+                    </p>
+
+                    <div class="hero-actions">
+                        <div class="filter-wrap">
+                            <label for="timeFilter">View range</label>
+                            <select id="timeFilter" onchange="updateDashboard()">
+                                <option value="daily">Daily</option>
+                                <option value="monthly">Monthly</option>
+                                <option value="yearly">Yearly</option>
+                            </select>
+                        </div>
+
+                        <button onclick="goToShop()" class="back-btn" type="button">Back to shop</button>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-image-frame">
+                        <img src="../images/hero-cookie.png" alt="Signature chocolate chip cookie">
+                    </div>
+                    <div class="hero-badge">
+                        <span class="badge-label">Best seller</span>
+                        <strong id="heroTopProduct">Chocolate Chip</strong>
+                    </div>
+                </div>
+            </section>
+
+            <section class="stats-grid">
+                <article class="stat-card featured">
+                    <p>Total Revenue</p>
+                    <h3 id="revenue">Rs 0</h3>
+                    <span id="revenueNote">Revenue across all saved orders</span>
+                </article>
+
+                <article class="stat-card">
+                    <p>Total Orders</p>
+                    <h3 id="orders">0</h3>
+                    <span id="ordersNote">Orders captured in storage</span>
+                </article>
+
+                <article class="stat-card">
+                    <p>Top Cookie</p>
+                    <h3 id="topProduct">-</h3>
+                    <span id="topProductNote">Most ordered item right now</span>
+                </article>
+
+                <article class="stat-card">
+                    <p>Growth</p>
+                    <h3 id="growth">0%</h3>
+                    <span id="growthNote">Compared with previous period</span>
+                </article>
+
+                <article class="stat-card">
+                    <p>Avg Order</p>
+                    <h3 id="avgOrder">Rs 0</h3>
+                    <span id="avgOrderNote">Average basket value</span>
+                </article>
+
+                <article class="stat-card accent">
+                    <p>Top Category</p>
+                    <h3 id="topCategory">-</h3>
+                    <span id="topCategoryNote">Category customers choose most</span>
+                </article>
+            </section>
+
+            <section class="content-grid">
+                <article class="panel chart-panel sales-panel">
+                    <div class="panel-head">
+                        <div>
+                            <p class="eyebrow">Revenue flow</p>
+                            <h3>Sales Overview</h3>
+                        </div>
+                        <span class="panel-tag" id="rangeLabel">Daily snapshot</span>
+                    </div>
+                    <canvas id="salesChart"></canvas>
+                </article>
+
+                <article class="panel chart-panel">
+                    <div class="panel-head">
+                        <div>
+                            <p class="eyebrow">Flavor demand</p>
+                            <h3>Cookie Sales</h3>
+                        </div>
+                    </div>
+                    <canvas id="productChart"></canvas>
+                </article>
+
+                <article class="panel chart-panel">
+                    <div class="panel-head">
+                        <div>
+                            <p class="eyebrow">Mix breakdown</p>
+                            <h3>Category Share</h3>
+                        </div>
+                    </div>
+                    <canvas id="categoryChart"></canvas>
+                </article>
+
+                <article class="panel insights-panel">
+                    <div class="panel-head">
+                        <div>
+                            <p class="eyebrow">Quick read</p>
+                            <h3>Top Movers</h3>
+                        </div>
+                    </div>
+                    <div id="insightsList" class="insights-list"></div>
+                </article>
+            </section>
+
+            <section class="panel table-panel">
+                <div class="panel-head">
+                    <div>
+                        <p class="eyebrow">Order feed</p>
+                        <h3>Recent Orders</h3>
+                    </div>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Category</th>
+                                <th>Qty</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                                <th>Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTable"></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
