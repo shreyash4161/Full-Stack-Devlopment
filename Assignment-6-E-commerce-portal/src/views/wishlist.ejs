@@ -1,0 +1,19 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<main class="page-shell">
+  <section class="container page-intro page-intro-card glass-card">
+    <div>
+      <span class="eyebrow">Wishlist</span>
+      <h1>Your saved finds in one calmer place</h1>
+      <p>Keep the interesting stuff here, compare later, and jump back into the listings that caught your eye.</p>
+    </div>
+    <div class="intro-pills">
+      <span class="mini-pill"><%= wishlist.length %> saved items</span>
+    </div>
+  </section>
+  <section class="container listing-grid compact-space">
+    <% wishlist.forEach((entry) => { const listing = entry.listing; %><%- include('partials/listing-card', { listing }) %><% }) %>
+    <% if (wishlist.length === 0) { %><div class="glass-card empty-card">You have not saved any items yet. Browse the marketplace and tap save on the things you want to compare later.</div><% } %>
+  </section>
+</main>
+<%- include('partials/footer') %>

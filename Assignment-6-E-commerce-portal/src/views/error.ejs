@@ -1,0 +1,14 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<main class="page-shell auth-shell">
+  <section class="glass-card auth-card">
+    <span class="eyebrow">Error <%= statusCode %></span>
+    <h1><%= message %></h1>
+    <p>Head back to the marketplace or return to the dashboard.</p>
+    <div class="hero-actions">
+      <a class="button button-primary" href="/marketplace">Browse marketplace</a>
+      <a class="button button-secondary" href="/dashboard">Go to dashboard</a>
+    </div>
+  </section>
+</main>
+<%- include('partials/footer') %>

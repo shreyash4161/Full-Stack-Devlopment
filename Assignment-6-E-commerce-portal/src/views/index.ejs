@@ -1,0 +1,99 @@
+<%- include("partials/head") %>
+<%- include("partials/header", { pageTitle }) %>
+
+<main>
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Trusted resale marketplace</span>
+        <h1>Buy and sell premium used items with clarity, speed, and confidence.</h1>
+        <p>
+          Explore verified-looking listings for cars, bikes, electronics, furniture, and more. Built with
+          Node.js, Express, and an optional MongoDB-powered backend.
+        </p>
+        <div class="hero-actions">
+          <a href="/listings" class="btn btn-primary">Browse Listings</a>
+          <a href="/sell" class="btn btn-secondary">Post Your Item</a>
+        </div>
+      </div>
+
+      <div class="hero-panel">
+        <div class="hero-card">
+          <p>Total Listings</p>
+          <strong><%= stats.totalListings %>+</strong>
+        </div>
+        <div class="hero-card">
+          <p>Featured Picks</p>
+          <strong><%= stats.featuredListings %></strong>
+        </div>
+        <div class="hero-card accent">
+          <p>Average Price</p>
+          <strong>INR <%= stats.averagePrice.toLocaleString("en-IN") %></strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container categories-section">
+    <div class="section-heading">
+      <span class="eyebrow">Popular categories</span>
+      <h2>Everything people actually shop for in second-hand markets</h2>
+    </div>
+
+    <div class="category-grid">
+      <article class="category-card">
+        <h3>Cars</h3>
+        <p>City-friendly hatchbacks, family SUVs, and performance sedans.</p>
+      </article>
+      <article class="category-card">
+        <h3>Bikes</h3>
+        <p>Daily commuters, touring machines, and sharp-looking sports models.</p>
+      </article>
+      <article class="category-card">
+        <h3>Electronics</h3>
+        <p>Phones, smart TVs, laptops, and creator gear ready for a second life.</p>
+      </article>
+      <article class="category-card">
+        <h3>Furniture</h3>
+        <p>Home office setups and practical decor pieces without showroom pricing.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="container featured-section">
+    <div class="section-heading">
+      <span class="eyebrow">Featured inventory</span>
+      <h2>Fresh listings users can act on today</h2>
+    </div>
+
+    <div class="listing-grid">
+      <% featuredListings.forEach((listing) => { %>
+        <article class="listing-card">
+          <div class="listing-media">
+            <img
+              src="<%= listing.imageUrl %>"
+              alt="<%= listing.title %>"
+              class="listing-image"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='/images/fallback-marketplace.svg';"
+            />
+          </div>
+          <div class="listing-body">
+            <div class="listing-meta">
+              <span class="pill"><%= listing.category %></span>
+              <span><%= listing.city %></span>
+            </div>
+            <h3><%= listing.title %></h3>
+            <p><%= listing.description %></p>
+            <div class="listing-footer">
+              <strong>INR <%= listing.price.toLocaleString("en-IN") %></strong>
+              <a href="/listings/<%= listing._id %>">View Details</a>
+            </div>
+          </div>
+        </article>
+      <% }) %>
+    </div>
+  </section>
+</main>
+
+<%- include("partials/footer") %>

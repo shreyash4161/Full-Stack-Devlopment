@@ -1,0 +1,18 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" rx="36" fill="#EFF4F7"/>
+  <rect x="60" y="60" width="1080" height="680" rx="28" fill="#FAFCFD"/>
+  <rect x="240" y="190" width="720" height="390" rx="28" fill="#1F2933"/>
+  <rect x="268" y="218" width="664" height="334" rx="18" fill="url(#paint0_linear)"/>
+  <rect x="562" y="580" width="76" height="44" rx="12" fill="#2F3C4A"/>
+  <rect x="490" y="624" width="220" height="22" rx="11" fill="#4A5A69"/>
+  <circle cx="820" cy="314" r="58" fill="#FFFFFF" fill-opacity="0.18"/>
+  <circle cx="366" cy="438" r="94" fill="#FFFFFF" fill-opacity="0.12"/>
+  <text x="150" y="182" fill="#345B73" font-family="Arial, sans-serif" font-size="56" font-weight="700">Samsung Smart TV</text>
+  <text x="150" y="234" fill="#597285" font-family="Arial, sans-serif" font-size="28">Home entertainment listing</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="268" y1="218" x2="932" y2="552" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1F7183"/>
+      <stop offset="1" stop-color="#453C95"/>
+    </linearGradient>
+  </defs>
+</svg>

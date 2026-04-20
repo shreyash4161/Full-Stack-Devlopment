@@ -1,0 +1,21 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" rx="36" fill="#EDF4FC"/>
+  <rect x="60" y="60" width="1080" height="680" rx="28" fill="#F9FBFE"/>
+  <rect x="414" y="152" width="372" height="500" rx="46" fill="#26333E"/>
+  <rect x="438" y="176" width="324" height="452" rx="32" fill="url(#paint0_linear)"/>
+  <rect x="526" y="186" width="148" height="24" rx="12" fill="#1A232B"/>
+  <circle cx="506" cy="248" r="34" fill="#DCE8F7"/>
+  <circle cx="506" cy="248" r="16" fill="#7296C1"/>
+  <circle cx="590" cy="248" r="34" fill="#DCE8F7"/>
+  <circle cx="590" cy="248" r="16" fill="#7296C1"/>
+  <circle cx="548" cy="326" r="34" fill="#DCE8F7"/>
+  <circle cx="548" cy="326" r="16" fill="#7296C1"/>
+  <text x="150" y="184" fill="#2A4D78" font-family="Arial, sans-serif" font-size="56" font-weight="700">iPhone 14 Pro</text>
+  <text x="150" y="236" fill="#52606D" font-family="Arial, sans-serif" font-size="28">Premium pre-owned smartphone</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="438" y1="176" x2="762" y2="628" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A8C9F1"/>
+      <stop offset="1" stop-color="#F4FAFF"/>
+    </linearGradient>
+  </defs>
+</svg>

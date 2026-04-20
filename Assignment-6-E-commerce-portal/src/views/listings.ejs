@@ -1,0 +1,80 @@
+<%- include("partials/head") %>
+<%- include("partials/header", { pageTitle }) %>
+
+<main class="container page-section">
+  <section class="section-heading compact">
+    <span class="eyebrow">Marketplace</span>
+    <h1>Browse used items across categories</h1>
+    <p>Filter by search, category, city, condition, and price to narrow your shortlist.</p>
+  </section>
+
+  <section class="filters-panel">
+    <form action="/listings" method="GET" class="filters-form">
+      <input type="text" name="search" placeholder="Search for Creta, iPhone, TV..." value="<%= filters.search || '' %>" />
+
+      <select name="category">
+        <option value="">All categories</option>
+        <% categories.forEach((category) => { %>
+          <option value="<%= category %>" <%= filters.category === category ? "selected" : "" %>><%= category %></option>
+        <% }) %>
+      </select>
+
+      <select name="condition">
+        <option value="">Any condition</option>
+        <% conditions.forEach((condition) => { %>
+          <option value="<%= condition %>" <%= filters.condition === condition ? "selected" : "" %>><%= condition %></option>
+        <% }) %>
+      </select>
+
+      <input type="text" name="city" placeholder="City" value="<%= filters.city || '' %>" />
+      <input type="number" name="maxPrice" placeholder="Max price" value="<%= filters.maxPrice || '' %>" />
+
+      <div class="filters-actions">
+        <button type="submit" class="btn btn-primary">Apply Filters</button>
+        <a href="/listings" class="btn btn-secondary">Reset</a>
+      </div>
+    </form>
+  </section>
+
+  <section class="results-count">
+    <strong><%= listings.length %></strong> listing(s) available
+  </section>
+
+  <section class="listing-grid">
+    <% if (listings.length === 0) { %>
+      <article class="empty-state">
+        <h2>No items matched your filters</h2>
+        <p>Try a broader search or clear the current filters to explore all listings.</p>
+      </article>
+    <% } %>
+
+    <% listings.forEach((listing) => { %>
+      <article class="listing-card">
+        <div class="listing-media">
+          <img
+            src="<%= listing.imageUrl %>"
+            alt="<%= listing.title %>"
+            class="listing-image"
+            loading="lazy"
+            onerror="this.onerror=null;this.src='/images/fallback-marketplace.svg';"
+          />
+        </div>
+        <div class="listing-body">
+          <div class="listing-meta">
+            <span class="pill"><%= listing.category %></span>
+            <span><%= listing.condition %></span>
+          </div>
+          <h2><%= listing.title %></h2>
+          <p><%= listing.city %> | <%= listing.year %> | <%= listing.mileage.toLocaleString("en-IN") %> km</p>
+          <p><%= listing.description %></p>
+          <div class="listing-footer">
+            <strong>INR <%= listing.price.toLocaleString("en-IN") %></strong>
+            <a href="/listings/<%= listing._id %>">Details</a>
+          </div>
+        </div>
+      </article>
+    <% }) %>
+  </section>
+</main>
+
+<%- include("partials/footer") %>

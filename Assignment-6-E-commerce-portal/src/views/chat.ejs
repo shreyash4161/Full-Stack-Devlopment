@@ -1,0 +1,33 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<main class="page-shell">
+  <section class="container page-intro"><span class="eyebrow">Inbox</span><h1>Talk to buyers and sellers in real time</h1></section>
+  <section class="container chat-layout compact-space">
+    <aside class="glass-card chat-sidebar">
+      <% conversations.forEach((conversation) => { %>
+        <a class="conversation-card" href="/chat/<%= conversation.listing._id %>?seller=<%= conversation.sellerId %>&buyer=<%= conversation.buyerId %>">
+          <strong><%= conversation.listing?.title || 'Conversation' %></strong>
+          <p><%= conversation.partnerName %></p>
+        </a>
+      <% }) %>
+      <% if (conversations.length === 0) { %><div class="empty-card">No conversations yet.</div><% } %>
+    </aside>
+    <div class="glass-card chat-panel" data-chat-panel data-room-id="<%= activeRoom?.roomId || '' %>" data-listing-id="<%= activeRoom?.listing?._id || '' %>" data-receiver-id="<%= activeRoom?.partner?._id || '' %>">
+      <% if (!activeRoom) { %>
+        <div class="empty-card fill-space">Open a listing and click “Message seller” to start chatting.</div>
+      <% } else { %>
+        <div class="chat-header"><div><strong><%= activeRoom.listing.title %></strong><p>Chat with <%= activeRoom.partner?.name || activeRoom.seller.name %></p></div></div>
+        <div class="chat-messages" data-chat-messages>
+          <% roomMessages.forEach((message) => { %>
+            <div class="message-bubble <%= currentUser && message.sender && currentUser._id.toString() === message.sender._id.toString() ? 'self' : '' %>"><strong><%= message.sender?.name || 'User' %></strong><p><%= message.content %></p></div>
+          <% }) %>
+        </div>
+        <form class="chat-form" data-chat-form>
+          <textarea name="content" rows="3" placeholder="Write your message"></textarea>
+          <button class="button button-primary" type="submit">Send</button>
+        </form>
+      <% } %>
+    </div>
+  </section>
+</main>
+<%- include('partials/footer') %>

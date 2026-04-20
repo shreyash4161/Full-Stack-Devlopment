@@ -1,0 +1,34 @@
+<header class="site-header">
+  <div class="container nav-shell">
+    <a href="/" class="brand-mark-link">
+      <span class="brand-mark">R</span>
+      <span>
+        <strong><%= appName %></strong>
+        <small>Campus resale club</small>
+      </span>
+    </a>
+
+    <button class="nav-menu-button" type="button" data-nav-toggle aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+    </button>
+
+    <nav class="site-nav" data-nav-panel>
+      <a class="<%= currentPath === '/' ? 'active' : '' %>" href="/">Home</a>
+      <a class="<%= currentPath === '/marketplace' ? 'active' : '' %>" href="/marketplace">Marketplace</a>
+      <a class="<%= currentPath === '/sell' ? 'active' : '' %>" href="/sell">Sell</a>
+      <% if (currentUser) { %>
+        <a class="<%= currentPath === '/dashboard' ? 'active' : '' %>" href="/dashboard">Dashboard</a>
+        <a class="<%= currentPath === '/wishlist' ? 'active' : '' %>" href="/wishlist">Saved</a>
+        <a class="<%= currentPath === '/chat' ? 'active' : '' %>" href="/chat">Inbox</a>
+        <a class="<%= currentPath === '/profile' ? 'active' : '' %>" href="/profile">Profile</a>
+        <form action="/logout" method="post" class="inline-form">
+          <button class="ghost-button" type="submit">Logout</button>
+        </form>
+      <% } else { %>
+        <a class="<%= currentPath === '/login' ? 'active' : '' %>" href="/login">Login</a>
+        <a class="button button-primary nav-cta" href="/signup">Join free</a>
+      <% } %>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle theme">Dark mode</button>
+    </nav>
+  </div>
+</header>

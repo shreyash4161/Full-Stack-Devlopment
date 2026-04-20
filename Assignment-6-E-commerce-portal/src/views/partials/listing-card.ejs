@@ -1,0 +1,31 @@
+<article class="listing-card glass-card">
+  <a href="/listings/<%= listing.slug %>" class="listing-media-wrap">
+    <img class="listing-image" src="<%= listing.images?.[0] || '/images/fallback-marketplace.svg' %>" alt="<%= listing.title %>" />
+    <div class="listing-overlay">
+      <span class="pill"><%= listing.category %></span>
+      <% if (listing.featured) { %><span class="badge-featured">Campus pick</span><% } %>
+    </div>
+  </a>
+  <div class="listing-body">
+    <div class="listing-topline">
+      <div>
+        <h3><a href="/listings/<%= listing.slug %>"><%= listing.title %></a></h3>
+        <p><%= listing.brand %> <%= listing.model %> • <%= listing.location?.city || 'City not added' %></p>
+      </div>
+      <strong class="listing-price"><%= helpers.formatCurrency(listing.price) %></strong>
+    </div>
+    <div class="listing-tags">
+      <span class="mini-pill"><%= listing.condition %></span>
+      <span class="mini-pill"><%= listing.viewCount || 0 %> views</span>
+      <% if (listing.status) { %><span class="mini-pill status-pill"><%= listing.status %></span><% } %>
+    </div>
+    <div class="listing-actions">
+      <a class="button button-secondary" href="/listings/<%= listing.slug %>">View details</a>
+      <% if (currentUser) { %>
+        <form action="/listings/<%= listing._id %>/wishlist" method="post">
+          <button class="ghost-button" type="submit"><%= listing.isWishlisted ? 'Saved' : 'Save' %></button>
+        </form>
+      <% } %>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,140 @@
+<%- include("partials/head") %>
+<%- include("partials/header", { pageTitle }) %>
+
+<main class="container page-section">
+  <section class="section-heading compact">
+    <span class="eyebrow">Seller dashboard</span>
+    <h1>Create a new listing</h1>
+    <p>Submit your used car, bike, gadget, or furniture listing for the marketplace.</p>
+  </section>
+
+  <% if (errors.length > 0) { %>
+    <section class="alert-box">
+      <h2>Please fix the following issues:</h2>
+      <ul>
+        <% errors.forEach((error) => { %>
+          <li><%= error %></li>
+        <% }) %>
+      </ul>
+    </section>
+  <% } %>
+
+  <section class="form-panel">
+    <form action="/sell" method="POST" enctype="multipart/form-data" class="listing-form">
+      <div class="form-grid">
+        <label>
+          Title
+          <input type="text" name="title" value="<%= formData.title || '' %>" required />
+        </label>
+
+        <label>
+          Category
+          <select name="category" required>
+            <option value="">Select category</option>
+            <% categories.forEach((category) => { %>
+              <option value="<%= category %>" <%= formData.category === category ? "selected" : "" %>><%= category %></option>
+            <% }) %>
+          </select>
+        </label>
+
+        <label>
+          Brand
+          <input type="text" name="brand" value="<%= formData.brand || '' %>" required />
+        </label>
+
+        <label>
+          Model
+          <input type="text" name="model" value="<%= formData.model || '' %>" required />
+        </label>
+
+        <label>
+          Year
+          <input type="number" name="year" min="1990" value="<%= formData.year || '' %>" required />
+        </label>
+
+        <label>
+          Price (INR)
+          <input type="number" name="price" min="1" value="<%= formData.price || '' %>" required />
+        </label>
+
+        <label>
+          City
+          <input type="text" name="city" value="<%= formData.city || '' %>" required />
+        </label>
+
+        <label>
+          Condition
+          <select name="condition" required>
+            <option value="">Select condition</option>
+            <% conditions.forEach((condition) => { %>
+              <option value="<%= condition %>" <%= formData.condition === condition ? "selected" : "" %>><%= condition %></option>
+            <% }) %>
+          </select>
+        </label>
+
+        <label>
+          Mileage
+          <input type="number" name="mileage" min="0" value="<%= formData.mileage || '' %>" />
+        </label>
+
+        <label>
+          Fuel Type
+          <input type="text" name="fuelType" value="<%= formData.fuelType || '' %>" placeholder="Petrol / Diesel / N/A" />
+        </label>
+
+        <label>
+          Transmission
+          <input type="text" name="transmission" value="<%= formData.transmission || '' %>" placeholder="Manual / Automatic / N/A" />
+        </label>
+
+        <label>
+          Listing Image
+          <input type="file" name="image" accept="image/*" required />
+          <small class="form-hint">Upload a JPG, PNG, WEBP, SVG, or similar image up to 5 MB.</small>
+        </label>
+
+        <label class="full-width">
+          Description
+          <textarea name="description" rows="5" required><%= formData.description || '' %></textarea>
+        </label>
+
+        <label>
+          Seller Name
+          <input type="text" name="sellerName" value="<%= formData.sellerName || '' %>" required />
+        </label>
+
+        <label>
+          Seller Email
+          <input type="email" name="sellerEmail" value="<%= formData.sellerEmail || '' %>" required />
+        </label>
+
+        <label>
+          Seller Phone
+          <input type="text" name="sellerPhone" value="<%= formData.sellerPhone || '' %>" required />
+        </label>
+
+        <label class="checkbox">
+          <input type="checkbox" name="featured" <%= formData.featured === "on" ? "checked" : "" %> />
+          Mark as featured
+        </label>
+      </div>
+
+      <section class="image-preview-panel" aria-live="polite">
+        <div class="image-preview-frame">
+          <img
+            id="image-preview"
+            src="/images/fallback-marketplace.svg"
+            alt="Listing preview"
+            class="listing-image preview-image"
+          />
+        </div>
+        <p id="image-preview-text" class="form-hint">Your selected image will preview here before publishing.</p>
+      </section>
+
+      <button type="submit" class="btn btn-primary">Publish Listing</button>
+    </form>
+  </section>
+</main>
+
+<script src="/js/sell-form.js"></script>
+<%- include("partials/footer") %>

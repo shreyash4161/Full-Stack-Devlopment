@@ -1,0 +1,27 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<main class="page-shell">
+  <section class="container page-intro page-intro-card glass-card">
+    <div>
+      <span class="eyebrow">Notifications</span>
+      <h1>Everything that needs your attention</h1>
+      <p>Keep track of listing approvals, buyer activity, and account updates without digging through clutter.</p>
+    </div>
+    <div class="intro-pills">
+      <span class="mini-pill"><%= notifications.length %> recent updates</span>
+    </div>
+  </section>
+  <section class="container table-stack compact-space">
+    <% notifications.forEach((notification) => { %>
+      <form class="glass-card notify-row" method="post" action="/notifications/<%= notification._id %>/read">
+        <div>
+          <strong><%= notification.title %></strong>
+          <p><%= notification.body %></p>
+        </div>
+        <button class="button button-secondary" type="submit"><%= notification.readAt ? 'Open' : 'Mark as read' %></button>
+      </form>
+    <% }) %>
+    <% if (notifications.length === 0) { %><div class="glass-card empty-card">No notifications right now. Once people message you or your listings change state, updates will appear here.</div><% } %>
+  </section>
+</main>
+<%- include('partials/footer') %>

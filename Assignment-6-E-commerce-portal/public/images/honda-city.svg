@@ -1,0 +1,13 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" rx="36" fill="#EEF2F5"/>
+  <rect x="60" y="60" width="1080" height="680" rx="28" fill="#FAFCFD"/>
+  <path d="M186 534C186 502.52 211.52 477 243 477H356L462 381C485.395 359.823 515.848 348.105 547.398 348H783C847.617 348 900 400.383 900 465V534H186Z" fill="#5D7287"/>
+  <rect x="487" y="388" width="152" height="82" rx="16" fill="#D5E7F4"/>
+  <rect x="652" y="388" width="142" height="82" rx="16" fill="#D5E7F4"/>
+  <circle cx="336" cy="544" r="60" fill="#212A33"/>
+  <circle cx="336" cy="544" r="28" fill="#F8F8F8"/>
+  <circle cx="776" cy="544" r="60" fill="#212A33"/>
+  <circle cx="776" cy="544" r="28" fill="#F8F8F8"/>
+  <text x="148" y="180" fill="#415463" font-family="Arial, sans-serif" font-size="56" font-weight="700">Honda City</text>
+  <text x="148" y="232" fill="#6B7D8D" font-family="Arial, sans-serif" font-size="28">Refined sedan listing</text>
+</svg>

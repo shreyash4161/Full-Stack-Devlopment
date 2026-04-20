@@ -1,0 +1,14 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" rx="36" fill="#FFF3E9"/>
+  <rect x="60" y="60" width="1080" height="680" rx="28" fill="#FFF9F4"/>
+  <rect x="286" y="334" width="470" height="30" rx="15" fill="#B88256"/>
+  <rect x="314" y="364" width="22" height="218" rx="11" fill="#8D5B34"/>
+  <rect x="708" y="364" width="22" height="218" rx="11" fill="#8D5B34"/>
+  <rect x="418" y="430" width="134" height="152" rx="20" fill="#E1B98B"/>
+  <rect x="440" y="462" width="90" height="114" rx="16" fill="#F5D8B8"/>
+  <rect x="640" y="388" width="120" height="194" rx="20" fill="#C99568"/>
+  <rect x="666" y="286" width="68" height="102" rx="18" fill="#3D4A59"/>
+  <circle cx="694" cy="320" r="14" fill="#F4B95D"/>
+  <text x="150" y="182" fill="#A96835" font-family="Arial, sans-serif" font-size="56" font-weight="700">Study Desk Set</text>
+  <text x="150" y="234" fill="#7A5A3B" font-family="Arial, sans-serif" font-size="28">Furniture listing with warm studio styling</text>
+</svg>

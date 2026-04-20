@@ -1,0 +1,126 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<main class="page-shell">
+  <section class="container page-intro page-intro-card glass-card">
+    <div>
+      <span class="eyebrow">Dashboard</span>
+      <h1><%= mode === 'admin' ? 'Keep the marketplace healthy' : `Hey ${currentUser?.name?.split(' ')[0] || 'there'}, here is your selling space` %></h1>
+      <p><%= mode === 'admin' ? 'Review pending activity, track platform growth, and keep the marketplace clean.' : 'Track listings, saves, chats, and activity from one much friendlier dashboard.' %></p>
+    </div>
+    <div class="intro-pills">
+      <span class="mini-pill"><%= mode === 'admin' ? 'Admin mode' : 'Seller mode' %></span>
+      <span class="mini-pill">Fast actions</span>
+      <span class="mini-pill">Better overview</span>
+    </div>
+    <%- include('partials/flash') %>
+  </section>
+
+  <section class="container stat-grid">
+    <% Object.entries(stats).forEach(([key, value]) => { %>
+      <div class="glass-card stat-card">
+        <span><%= key.replace(/([A-Z])/g, ' $1') %></span>
+        <strong><%= value %></strong>
+      </div>
+    <% }) %>
+  </section>
+
+  <% if (mode === 'admin') { %>
+    <section class="container dual-section compact-space">
+      <div>
+        <div class="section-heading"><h2>Pending approvals</h2><p>Review new listings quickly so good sellers do not wait too long.</p></div>
+        <div class="table-stack">
+          <% pendingListings.forEach((listing) => { %>
+            <div class="glass-card table-row">
+              <div>
+                <strong><%= listing.title %></strong>
+                <p><%= listing.seller?.name %> • <%= listing.location?.city %></p>
+              </div>
+              <div class="row-actions">
+                <form method="post" action="/admin/listings/<%= listing._id %>/approve"><button class="button button-primary" type="submit">Approve</button></form>
+                <form method="post" action="/admin/listings/<%= listing._id %>/reject"><button class="button button-secondary" type="submit">Reject</button></form>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+      <div>
+        <div class="section-heading"><h2>Recent users</h2><p>Quick member view for moderation and cleanup.</p></div>
+        <div class="table-stack">
+          <% users.forEach((user) => { %>
+            <div class="glass-card table-row">
+              <div>
+                <strong><%= user.name %></strong>
+                <p><%= user.email %> • <%= user.role %></p>
+              </div>
+              <form method="post" action="/admin/users/<%= user._id %>/delete"><button class="ghost-button" type="submit">Remove</button></form>
+            </div>
+          <% }) %>
+        </div>
+      </div>
+    </section>
+  <% } else { %>
+    <section class="container action-banner glass-card compact-space">
+      <div>
+        <span class="eyebrow">Quick actions</span>
+        <h2>Keep your listings active and attractive</h2>
+        <p>Post something new, refresh an older listing, or reply to buyers before the deal gets cold.</p>
+      </div>
+      <div class="hero-actions">
+        <a class="button button-primary" href="/sell">Create listing</a>
+        <a class="button button-secondary" href="/marketplace">Browse market</a>
+      </div>
+    </section>
+
+    <section class="container dual-section compact-space">
+      <div>
+        <div class="section-heading split"><div><h2>Your listings</h2><p>Everything you are currently selling, with clean status visibility.</p></div><a class="button button-secondary" href="/sell">New listing</a></div>
+        <div class="table-stack">
+          <% myListings.forEach((listing) => { %>
+            <div class="glass-card table-row">
+              <div>
+                <strong><%= listing.title %></strong>
+                <p><%= helpers.formatCurrency(listing.price) %> • <%= listing.status %> • <%= listing.viewCount %> views</p>
+              </div>
+              <div class="row-actions">
+                <a class="ghost-button" href="/listings/<%= listing.slug %>">View</a>
+                <a class="ghost-button" href="/listings/<%= listing._id %>/edit">Edit</a>
+                <form method="post" action="/listings/<%= listing._id %>/delete"><button class="ghost-button danger" type="submit">Delete</button></form>
+              </div>
+            </div>
+          <% }) %>
+          <% if (myListings.length === 0) { %><div class="glass-card empty-card">You have not posted anything yet. Start with one clean listing and build from there.</div><% } %>
+        </div>
+      </div>
+      <div>
+        <div class="section-heading"><h2>Recent notifications</h2><p>Important activity, approvals, and buyer actions in one place.</p></div>
+        <div class="table-stack">
+          <% notifications.forEach((notification) => { %>
+            <form class="glass-card notify-row" method="post" action="/notifications/<%= notification._id %>/read">
+              <div>
+                <strong><%= notification.title %></strong>
+                <p><%= notification.body %></p>
+              </div>
+              <button class="ghost-button" type="submit"><%= notification.readAt ? 'Open' : 'Mark read' %></button>
+            </form>
+          <% }) %>
+          <% if (notifications.length === 0) { %><div class="glass-card empty-card">No new notifications right now.</div><% } %>
+        </div>
+
+        <div class="section-heading compact-top"><h2>Recently viewed</h2><p>Jump back into products you checked earlier.</p></div>
+        <div class="listing-stack">
+          <% recentlyViewed.forEach((listing) => { %>
+            <a class="stack-card glass-card" href="/listings/<%= listing.slug %>">
+              <img src="<%= listing.images?.[0] || '/images/fallback-marketplace.svg' %>" alt="<%= listing.title %>" />
+              <div>
+                <strong><%= listing.title %></strong>
+                <p><%= helpers.formatCurrency(listing.price) %></p>
+              </div>
+            </a>
+          <% }) %>
+          <% if (recentlyViewed.length === 0) { %><div class="glass-card empty-card">Browse a few listings and they will show up here for quick access.</div><% } %>
+        </div>
+      </div>
+    </section>
+  <% } %>
+</main>
+<%- include('partials/footer') %>

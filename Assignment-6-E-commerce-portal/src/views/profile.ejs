@@ -1,0 +1,20 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<main class="page-shell">
+  <section class="container form-shell narrow-shell">
+    <div class="section-heading"><span class="eyebrow">Profile</span><h1>Your public seller card</h1></div>
+    <%- include('partials/flash') %>
+    <form class="glass-card listing-form" method="post" action="/profile">
+      <div class="form-grid">
+        <label>Name<input type="text" name="name" value="<%= profile.name %>" /></label>
+        <label>Email<input type="email" value="<%= profile.email %>" disabled /></label>
+        <label>Role<input type="text" value="<%= profile.role %>" disabled /></label>
+        <label>City<input type="text" name="city" value="<%= profile.city || '' %>" /></label>
+        <label>Phone<input type="text" name="phone" value="<%= profile.phone || '' %>" /></label>
+        <label class="full-span">Bio<textarea name="bio" rows="5"><%= profile.bio || '' %></textarea></label>
+      </div>
+      <button class="button button-primary" type="submit">Save profile</button>
+    </form>
+  </section>
+</main>
+<%- include('partials/footer') %>

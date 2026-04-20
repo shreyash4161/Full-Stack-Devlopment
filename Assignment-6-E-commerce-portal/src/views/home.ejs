@@ -1,0 +1,108 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<main>
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">College-friendly resale</span>
+        <h1>Sell your old stuff fast. Find better deals without the mess.</h1>
+        <p>Resellr turns campus resale into a polished, friendly marketplace for students looking for bikes, gadgets, room essentials, and everyday steals.</p>
+        <form class="hero-search glass-card" action="/marketplace" method="get">
+          <input type="search" name="q" placeholder="Search laptops, bikes, desks, phones..." data-search-input autocomplete="off" />
+          <button class="button button-primary" type="submit">Search</button>
+          <div class="search-suggestions" data-search-suggestions></div>
+        </form>
+        <div class="hero-actions">
+          <a class="button button-primary" href="/marketplace">Start browsing</a>
+          <a class="button button-secondary" href="/sell">List an item</a>
+        </div>
+        <div class="hero-badges">
+          <span class="mini-pill">Student vibe</span>
+          <span class="mini-pill">Live chat</span>
+          <span class="mini-pill">Quick posting</span>
+        </div>
+      </div>
+      <div class="hero-panel glass-card">
+        <div class="metric-card accent"><span>Active listings</span><strong><%= stats.totalListings || 0 %>+</strong><small>Fresh deals every day</small></div>
+        <div class="metric-card"><span>Total views</span><strong><%= stats.totalViews || 0 %></strong><small>Buyers are already browsing</small></div>
+        <div class="metric-card"><span>Average price</span><strong><%= helpers.formatCurrency(stats.averagePrice || 0) %></strong><small>Budget-friendly resale zone</small></div>
+        <div class="metric-card outlined"><span>Built for</span><strong>Hostellers, commuters, freshers</strong><small>Friendly enough for first-time sellers</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space trust-strip-wrap">
+    <div class="container trust-strip glass-card">
+      <div>
+        <span class="eyebrow">Why it feels better</span>
+        <h2>Less clutter, more confidence</h2>
+      </div>
+      <div class="trust-points">
+        <div><strong>Smart filters</strong><p>Jump straight to items that match your budget, city, and condition.</p></div>
+        <div><strong>Quick chats</strong><p>Message sellers instantly and close deals without leaving the app.</p></div>
+        <div><strong>Clear product pages</strong><p>See the details that matter before you decide to buy.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space">
+    <div class="container">
+      <div class="section-heading split">
+        <div>
+          <span class="eyebrow">Browse fast</span>
+          <h2>Popular categories students actually shop</h2>
+          <p>From commute essentials to room upgrades, everything is grouped for quick scrolling.</p>
+        </div>
+        <a class="button button-secondary" href="/marketplace">Open full marketplace</a>
+      </div>
+      <div class="category-grid">
+        <% categoryCounts.forEach((category) => { %>
+          <a class="glass-card category-card" href="/marketplace?category=<%= category._id %>">
+            <strong><%= category._id %></strong>
+            <span><%= category.count %> active listings</span>
+            <small>Tap to explore the best picks</small>
+          </a>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space tinted">
+    <div class="container">
+      <div class="section-heading split">
+        <div>
+          <span class="eyebrow">Featured drops</span>
+          <h2>Listings worth checking before your friends do</h2>
+          <p>Cleaner cards, faster comparison, and a much friendlier first impression.</p>
+        </div>
+        <a class="button button-secondary" href="/marketplace">See all listings</a>
+      </div>
+      <div class="listing-grid">
+        <% featuredListings.forEach((listing) => { %>
+          <%- include('partials/listing-card', { listing }) %>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space compact-space">
+    <div class="container perks-grid">
+      <div class="glass-card perk-card">
+        <span class="eyebrow">Step 1</span>
+        <h3>Post in minutes</h3>
+        <p>Add your title, photos, city, and price. The form guides first-time sellers better now.</p>
+      </div>
+      <div class="glass-card perk-card">
+        <span class="eyebrow">Step 2</span>
+        <h3>Chat with buyers</h3>
+        <p>Interested people can reach out quickly so you do not lose momentum on a good listing.</p>
+      </div>
+      <div class="glass-card perk-card">
+        <span class="eyebrow">Step 3</span>
+        <h3>Close smarter deals</h3>
+        <p>Use clear listing details and pricing cues to make your product feel trustworthy.</p>
+      </div>
+    </div>
+  </section>
+</main>
+<%- include('partials/footer') %>

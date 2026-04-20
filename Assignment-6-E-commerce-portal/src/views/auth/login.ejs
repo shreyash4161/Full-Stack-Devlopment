@@ -1,0 +1,30 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<main class="page-shell auth-shell">
+  <section class="auth-layout container">
+    <div class="glass-card auth-side-panel">
+      <span class="eyebrow">Welcome back</span>
+      <h1>Log in and pick up your deals where you left them.</h1>
+      <p>Check saved items, reply to buyers, and manage your listings from a much cleaner student-friendly dashboard.</p>
+      <div class="helper-points">
+        <div><strong>Faster access</strong><p>Your dashboard, saved items, and chats are one login away.</p></div>
+        <div><strong>Less clutter</strong><p>The refreshed UI keeps the important actions easy to spot.</p></div>
+      </div>
+    </div>
+
+    <section class="glass-card auth-card">
+      <span class="eyebrow">Login</span>
+      <h1>Sign in</h1>
+      <p>Jump into your dashboard, listings, messages, and saved items.</p>
+      <%- include('../partials/flash') %>
+      <form class="listing-form" method="post" action="/login">
+        <input type="hidden" name="next" value="<%= nextUrl %>" />
+        <label>Email<input type="email" name="email" value="<%= formData.email || '' %>" required /></label>
+        <label>Password<input type="password" name="password" required /></label>
+        <button class="button button-primary" type="submit">Login</button>
+        <p class="form-note">New here? <a href="/signup">Create an account</a>.</p>
+      </form>
+    </section>
+  </section>
+</main>
+<%- include('../partials/footer') %>

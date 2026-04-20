@@ -1,0 +1,57 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<main class="page-shell">
+  <section class="container form-shell">
+    <div class="form-hero glass-card">
+      <div>
+        <span class="eyebrow"><%= isEditing ? 'Update listing' : 'Sell on Resellr' %></span>
+        <h1><%= isEditing ? 'Refine your listing and attract better buyers' : 'Create a listing that feels trustworthy from the first glance' %></h1>
+        <p>Use clear details, clean photos, and the pricing helper to make your item easier to discover and easier to message about.</p>
+      </div>
+      <div class="intro-pills">
+        <span class="mini-pill">Multiple images</span>
+        <span class="mini-pill">Price cue</span>
+        <span class="mini-pill">Campus-friendly flow</span>
+      </div>
+    </div>
+
+    <%- include('partials/flash') %>
+
+    <div class="form-layout compact-space">
+      <form class="glass-card listing-form" action="<%= isEditing ? '/listings/' + listingId + '/edit' : '/sell' %>" method="post" enctype="multipart/form-data">
+        <div class="form-grid">
+          <label>Title<input type="text" name="title" value="<%= formData.title %>" required /></label>
+          <label>Price<input type="number" name="price" value="<%= formData.price %>" required /></label>
+          <label>Category<select name="category"><% categories.forEach((category) => { %><option value="<%= category %>" <%= formData.category === category ? 'selected' : '' %>><%= category %></option><% }) %></select></label>
+          <label>Condition<select name="condition"><% conditions.forEach((condition) => { %><option value="<%= condition %>" <%= formData.condition === condition ? 'selected' : '' %>><%= condition %></option><% }) %></select></label>
+          <label>Brand<input type="text" name="brand" value="<%= formData.brand %>" placeholder="Apple, Honda, IKEA..." /></label>
+          <label>Model<input type="text" name="model" value="<%= formData.model %>" placeholder="Model or variant" /></label>
+          <label>Year<input type="number" name="year" value="<%= formData.year %>" /></label>
+          <label>City<input type="text" name="city" value="<%= formData.city %>" required /></label>
+          <label>State<input type="text" name="state" value="<%= formData.state %>" /></label>
+          <label>Fuel type<input type="text" name="fuelType" value="<%= formData.fuelType %>" /></label>
+          <label>Transmission<input type="text" name="transmission" value="<%= formData.transmission %>" /></label>
+          <label class="full-span">Description<textarea name="description" rows="6" required><%= formData.description %></textarea></label>
+          <label class="full-span">Images<input type="file" name="images" multiple accept="image/*" /></label>
+        </div>
+        <div class="form-inline">
+          <label class="inline-check"><input type="checkbox" name="featured" <%= formData.featured ? 'checked' : '' %> /> Request featured boost</label>
+          <button class="button button-secondary" type="button" data-price-suggestion>Estimate price</button>
+          <div class="price-suggestion-output" data-price-suggestion-output></div>
+        </div>
+        <% if (formData.images && formData.images.length > 0) { %><div class="thumb-row"><% formData.images.forEach((image) => { %><img src="<%= image %>" alt="Listing image" /><% }) %></div><% } %>
+        <button class="button button-primary" type="submit"><%= isEditing ? 'Save changes' : 'Publish listing' %></button>
+      </form>
+
+      <aside class="glass-card helper-card">
+        <h3>Listing tips that help students trust faster</h3>
+        <div class="helper-points">
+          <div><strong>Use a specific title</strong><p>Example: "IPhone 13 128GB, lightly used" works better than "Phone for sale".</p></div>
+          <div><strong>Add the real condition</strong><p>Honest condition details lead to faster chats and fewer awkward meetups.</p></div>
+          <div><strong>Keep the price believable</strong><p>Use the helper if you are unsure where to start.</p></div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</main>
+<%- include('partials/footer') %>

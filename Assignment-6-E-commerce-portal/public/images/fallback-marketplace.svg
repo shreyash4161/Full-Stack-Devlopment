@@ -1,0 +1,11 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" rx="36" fill="#FCF1E5"/>
+  <rect x="70" y="70" width="1060" height="660" rx="28" fill="#FFF9F3" stroke="#E8C8A4" stroke-width="4"/>
+  <circle cx="270" cy="270" r="104" fill="#FFE1BF"/>
+  <path d="M238 314L292 228L346 314" stroke="#D56B1F" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="444" y="228" width="408" height="30" rx="15" fill="#D56B1F" fill-opacity="0.22"/>
+  <rect x="444" y="286" width="320" height="30" rx="15" fill="#D56B1F" fill-opacity="0.16"/>
+  <rect x="198" y="454" width="804" height="164" rx="24" fill="#F6E5D0"/>
+  <text x="600" y="530" text-anchor="middle" fill="#9B3D04" font-family="Arial, sans-serif" font-size="54" font-weight="700">Listing Image</text>
+  <text x="600" y="582" text-anchor="middle" fill="#7A5A3B" font-family="Arial, sans-serif" font-size="28">Upload a photo to show your item here</text>
+</svg>

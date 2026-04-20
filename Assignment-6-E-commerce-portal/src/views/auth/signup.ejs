@@ -1,0 +1,36 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+<main class="page-shell auth-shell">
+  <section class="auth-layout container auth-layout-wide">
+    <div class="glass-card auth-side-panel">
+      <span class="eyebrow">Join the community</span>
+      <h1>Create your profile and start flipping useful stuff with confidence.</h1>
+      <p>Whether you are selling a study desk, a bike, or an old phone, the refreshed marketplace makes first-time selling much less intimidating.</p>
+      <div class="helper-points">
+        <div><strong>Choose your role</strong><p>Start as a buyer or seller and still explore the whole platform.</p></div>
+        <div><strong>Set your city</strong><p>Location helps nearby students find your listings faster.</p></div>
+      </div>
+    </div>
+
+    <section class="glass-card auth-card wide-card">
+      <span class="eyebrow">Signup</span>
+      <h1>Create your marketplace account</h1>
+      <p>Set up your profile once and start buying or selling in minutes.</p>
+      <%- include('../partials/flash') %>
+      <form class="listing-form" method="post" action="/signup">
+        <div class="form-grid">
+          <label>Name<input type="text" name="name" value="<%= formData.name || '' %>" required /></label>
+          <label>Email<input type="email" name="email" value="<%= formData.email || '' %>" required /></label>
+          <label>Password<input type="password" name="password" required /></label>
+          <label>Role<select name="role"><option value="buyer" <%= formData.role === 'buyer' ? 'selected' : '' %>>Buyer</option><option value="seller" <%= formData.role === 'seller' ? 'selected' : '' %>>Seller</option></select></label>
+          <label>City<input type="text" name="city" value="<%= formData.city || '' %>" /></label>
+          <label>Phone<input type="text" name="phone" value="<%= formData.phone || '' %>" /></label>
+          <label class="full-span">Bio<textarea name="bio" rows="4"><%= formData.bio || '' %></textarea></label>
+        </div>
+        <button class="button button-primary" type="submit">Create account</button>
+        <p class="form-note">Already have an account? <a href="/login">Login</a>.</p>
+      </form>
+    </section>
+  </section>
+</main>
+<%- include('../partials/footer') %>

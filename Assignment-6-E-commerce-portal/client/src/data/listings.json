@@ -1,0 +1,164 @@
+[
+  {
+    "id": 1,
+    "title": "iPhone 13 – 128GB",
+    "price": 45000,
+    "location": "Pune",
+    "category": "Mobiles",
+    "image": "https://images.unsplash.com/photo-1632661674596-df8be0860e02?w=600&q=80",
+    "description": "Good condition, 128GB storage, original bill and charger included. Battery health 87%. Minor scratches on sides."
+  },
+  {
+    "id": 2,
+    "title": "Maruti Swift VXI 2019",
+    "price": 520000,
+    "location": "Mumbai",
+    "category": "Cars",
+    "image": "https://images.unsplash.com/photo-1549317661-bd32c8ce0afe?w=600&q=80",
+    "description": "Single owner, 32,000 km driven, petrol, manual. All service records available. Insurance valid till Dec 2026."
+  },
+  {
+    "id": 3,
+    "title": "Samsung Galaxy S22 Ultra",
+    "price": 52000,
+    "location": "Delhi",
+    "category": "Mobiles",
+    "image": "https://images.unsplash.com/photo-1610945264803-c22b62d2a7b3?w=600&q=80",
+    "description": "256GB, Phantom Black, S-Pen included. Screen guard since day one. Comes with original box and accessories."
+  },
+  {
+    "id": 4,
+    "title": "Royal Enfield Classic 350",
+    "price": 135000,
+    "location": "Bangalore",
+    "category": "Bikes",
+    "image": "https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&q=80",
+    "description": "2020 model, Stealth Black, 18,000 km done. New tyres, recently serviced. All papers clear."
+  },
+  {
+    "id": 5,
+    "title": "L-Shaped Sofa Set",
+    "price": 18000,
+    "location": "Hyderabad",
+    "category": "Furniture",
+    "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80",
+    "description": "6-seater L-shaped sofa in grey fabric. 2 years old, cushions in great shape. Selling due to relocation."
+  },
+  {
+    "id": 6,
+    "title": "Sony WH-1000XM5 Headphones",
+    "price": 22000,
+    "location": "Chennai",
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=600&q=80",
+    "description": "Barely used, noise cancelling headphones with original case and cable. Warranty valid for 8 more months."
+  },
+  {
+    "id": 7,
+    "title": "Honda City 2020 V CVT",
+    "price": 980000,
+    "location": "Pune",
+    "category": "Cars",
+    "image": "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=600&q=80",
+    "description": "Automatic, petrol, platinum white, 25,000 km driven. Ceramic coated, zero scratch body. Company serviced."
+  },
+  {
+    "id": 8,
+    "title": "MacBook Air M1 2020",
+    "price": 58000,
+    "location": "Bangalore",
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=600&q=80",
+    "description": "8GB RAM, 256GB SSD, Space Grey. Battery cycle count under 150. Charger and box included."
+  },
+  {
+    "id": 9,
+    "title": "KTM Duke 200",
+    "price": 110000,
+    "location": "Jaipur",
+    "category": "Bikes",
+    "image": "https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?w=600&q=80",
+    "description": "2021 model, orange-black, 12,000 km. Performance exhaust installed. All original parts available."
+  },
+  {
+    "id": 10,
+    "title": "IKEA Study Desk with Chair",
+    "price": 8500,
+    "location": "Delhi",
+    "category": "Furniture",
+    "image": "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?w=600&q=80",
+    "description": "White wooden study desk with ergonomic chair. Perfect for WFH setup. Dismantled for easy transport."
+  },
+  {
+    "id": 11,
+    "title": "iPad Air 5th Gen",
+    "price": 42000,
+    "location": "Mumbai",
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600&q=80",
+    "description": "64GB WiFi, Space Grey, Apple Pencil 2 compatible. Used for 6 months only. No scratches, with case."
+  },
+  {
+    "id": 12,
+    "title": "Yamaha FZ-S V3",
+    "price": 85000,
+    "location": "Lucknow",
+    "category": "Bikes",
+    "image": "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=600&q=80",
+    "description": "2022 Dark Knight edition, 8,500 km. First owner, zero accidents. Engine guard and phone mount installed."
+  },
+  {
+    "id": 13,
+    "title": "Samsung 55\" 4K Smart TV",
+    "price": 32000,
+    "location": "Chandigarh",
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?w=600&q=80",
+    "description": "Crystal UHD display, HDR10+, Tizen OS. 1.5 years old, wall mount included. Remote and box available."
+  },
+  {
+    "id": 14,
+    "title": "OnePlus 11 5G – 256GB",
+    "price": 38000,
+    "location": "Ahmedabad",
+    "category": "Mobiles",
+    "image": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600&q=80",
+    "description": "Titan Black, 16GB RAM, Hasselblad camera. Excellent condition with Dbrand skin applied. Under warranty."
+  },
+  {
+    "id": 15,
+    "title": "Wooden Dining Table (6 Seater)",
+    "price": 22000,
+    "location": "Kolkata",
+    "category": "Furniture",
+    "image": "https://images.unsplash.com/photo-1617806118233-18e1de247200?w=600&q=80",
+    "description": "Sheesham wood dining table with 6 chairs. Sturdy build, minor wear on one leg. Chairs re-cushioned recently."
+  },
+  {
+    "id": 16,
+    "title": "Hyundai i20 Asta 2021",
+    "price": 780000,
+    "location": "Noida",
+    "category": "Cars",
+    "image": "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&q=80",
+    "description": "Turbo petrol, dual-tone red-black, sunroof, 20,000 km. Dashcam and seat covers included. Spotless interior."
+  },
+  {
+    "id": 17,
+    "title": "JBL Flip 6 Bluetooth Speaker",
+    "price": 8500,
+    "location": "Indore",
+    "category": "Electronics",
+    "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600&q=80",
+    "description": "Waterproof portable speaker, teal color. 12 hours battery life. Bought 4 months ago, selling as gift received duplicate."
+  },
+  {
+    "id": 18,
+    "title": "Pixel 7 Pro – 128GB",
+    "price": 36000,
+    "location": "Pune",
+    "category": "Mobiles",
+    "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600&q=80",
+    "description": "Obsidian color, Google Tensor G2, fantastic camera. Stock Android experience. Original charger and case included."
+  }
+]

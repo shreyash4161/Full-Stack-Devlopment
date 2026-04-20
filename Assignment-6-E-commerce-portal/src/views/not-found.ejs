@@ -1,0 +1,13 @@
+<%- include("partials/head") %>
+<%- include("partials/header", { pageTitle }) %>
+
+<main class="container page-section">
+  <section class="empty-state">
+    <span class="eyebrow">404 error</span>
+    <h1>This page does not exist</h1>
+    <p>The requested path <strong><%= currentPath %></strong> could not be found.</p>
+    <a href="/" class="btn btn-primary">Go back home</a>
+  </section>
+</main>
+
+<%- include("partials/footer") %>

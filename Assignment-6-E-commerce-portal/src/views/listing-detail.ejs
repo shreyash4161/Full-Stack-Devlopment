@@ -1,0 +1,85 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<main class="page-shell">
+  <section class="container detail-grid detail-layout">
+    <div class="gallery-panel glass-card">
+      <div class="gallery-topline">
+        <span class="pill"><%= listing.category %></span>
+        <span class="badge-status <%= listing.status %>"><%= listing.status %></span>
+      </div>
+      <img class="detail-hero-image" src="<%= listing.images?.[0] || '/images/fallback-marketplace.svg' %>" alt="<%= listing.title %>" data-detail-image />
+      <div class="thumb-row">
+        <% (listing.images?.length ? listing.images : ['/images/fallback-marketplace.svg']).forEach((image, index) => { %>
+          <img src="<%= image %>" alt="<%= listing.title %> image <%= index + 1 %>" data-detail-thumb />
+        <% }) %>
+      </div>
+    </div>
+
+    <div class="glass-card detail-card">
+      <span class="eyebrow">Listing overview</span>
+      <h1><%= listing.title %></h1>
+      <p><%= listing.brand %> <%= listing.model %> • <%= listing.location?.city %>, <%= listing.location?.state %></p>
+      <div class="detail-price"><%= helpers.formatCurrency(listing.price) %></div>
+      <p class="detail-description"><%= listing.description %></p>
+
+      <div class="spec-grid">
+        <div><span>Condition</span><strong><%= listing.condition %></strong></div>
+        <div><span>Year</span><strong><%= listing.year || 'N/A' %></strong></div>
+        <div><span>Fuel type</span><strong><%= listing.fuelType || 'N/A' %></strong></div>
+        <div><span>Transmission</span><strong><%= listing.transmission || 'N/A' %></strong></div>
+        <div><span>Views</span><strong><%= listing.viewCount || 0 %></strong></div>
+        <div><span>Suggested price cue</span><strong><%= helpers.formatCurrency(listing.aiSuggestedPrice || listing.price) %></strong></div>
+      </div>
+
+      <div class="detail-actions">
+        <% if (currentUser && currentUser._id.toString() !== listing.seller._id.toString()) { %>
+          <a class="button button-primary" href="/chat/<%= listing._id %>?seller=<%= listing.seller._id %>">Message seller</a>
+          <form action="/listings/<%= listing._id %>/wishlist" method="post"><button class="button button-secondary" type="submit"><%= isWishlisted ? 'Saved to wishlist' : 'Save item' %></button></form>
+        <% } else if (!currentUser) { %>
+          <a class="button button-primary" href="/login?next=/listings/<%= listing.slug %>">Login to contact</a>
+        <% } %>
+      </div>
+
+      <div class="detail-support-grid">
+        <div class="nested-card seller-card">
+          <h3>Seller snapshot</h3>
+          <p><strong><%= listing.seller.name %></strong></p>
+          <p><%= listing.seller.city || listing.location?.city %></p>
+          <p><%= listing.seller.isOnline ? 'Online now' : `Last active ${helpers.timeAgo(listing.seller.lastSeenAt || listing.seller.updatedAt)}` %></p>
+        </div>
+        <div class="nested-card trust-card">
+          <h3>Why this page feels safer</h3>
+          <p>Price, condition, views, and seller info are grouped clearly so buyers can decide faster and with less friction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container section-space compact-space">
+    <div class="section-heading"><span class="eyebrow">Seller reviews</span><h2>What buyers are saying</h2></div>
+    <div class="review-grid">
+      <% if (reviews.length === 0) { %><div class="glass-card empty-card">No reviews yet for this listing.</div><% } %>
+      <% reviews.forEach((review) => { %>
+        <div class="glass-card review-card">
+          <strong><%= review.buyer?.name || 'Buyer' %></strong>
+          <span class="review-score"><%= review.rating %>/5 rating</span>
+          <p><%= review.comment || 'No comment added.' %></p>
+        </div>
+      <% }) %>
+    </div>
+    <% if (currentUser && currentUser._id.toString() !== listing.seller._id.toString()) { %>
+      <form class="glass-card review-form" action="/listings/<%= listing._id %>/reviews" method="post">
+        <h3>Leave a review</h3>
+        <label>Rating<select name="rating"><option value="5">5 stars</option><option value="4">4 stars</option><option value="3">3 stars</option><option value="2">2 stars</option><option value="1">1 star</option></select></label>
+        <label>Comment<textarea name="comment" rows="4" placeholder="How was your experience?"></textarea></label>
+        <button class="button button-primary" type="submit">Submit review</button>
+      </form>
+    <% } %>
+  </section>
+
+  <section class="container section-space compact-space">
+    <div class="section-heading split"><div><span class="eyebrow">Similar picks</span><h2>Keep exploring</h2></div></div>
+    <div class="listing-grid"><% similarListings.forEach((item) => { %><%- include('partials/listing-card', { listing: item }) %><% }) %></div>
+  </section>
+</main>
+<%- include('partials/footer') %>

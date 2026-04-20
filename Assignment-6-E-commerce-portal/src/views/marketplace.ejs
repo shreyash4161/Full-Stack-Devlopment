@@ -1,0 +1,94 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+<main class="page-shell">
+  <section class="container page-intro page-intro-card glass-card">
+    <div>
+      <span class="eyebrow">Marketplace</span>
+      <h1>Find second-hand deals that still feel premium.</h1>
+      <p>Search by category, condition, price, and city to discover listings that fit a college budget and still look worth buying.</p>
+    </div>
+    <div class="intro-pills">
+      <span class="mini-pill"><%= total %> listings live</span>
+      <span class="mini-pill">Page <%= pagination.page %> of <%= pagination.totalPages %></span>
+      <span class="mini-pill">Fast filters</span>
+    </div>
+  </section>
+
+  <section class="container page-grid marketplace-layout">
+    <aside class="glass-card filters-card">
+      <div class="filters-topline">
+        <h2>Refine results</h2>
+        <a href="/marketplace" class="ghost-button">Reset</a>
+      </div>
+      <form action="/marketplace" method="get" class="filters-form">
+        <label>Search
+          <input type="search" name="q" value="<%= filters.q || '' %>" placeholder="Search products" data-search-input autocomplete="off" />
+          <div class="search-suggestions" data-search-suggestions></div>
+        </label>
+        <label>Category
+          <select name="category">
+            <option value="">All categories</option>
+            <% categories.forEach((category) => { %>
+              <option value="<%= category %>" <%= filters.category === category ? 'selected' : '' %>><%= category %></option>
+            <% }) %>
+          </select>
+        </label>
+        <label>Condition
+          <select name="condition">
+            <option value="">Any condition</option>
+            <% conditions.forEach((condition) => { %>
+              <option value="<%= condition %>" <%= filters.condition === condition ? 'selected' : '' %>><%= condition %></option>
+            <% }) %>
+          </select>
+        </label>
+        <label>City<input type="text" name="city" value="<%= filters.city || '' %>" placeholder="Mumbai, Pune..." /></label>
+        <div class="price-range-grid">
+          <label>Min price<input type="number" name="minPrice" value="<%= filters.minPrice || '' %>" placeholder="1000" /></label>
+          <label>Max price<input type="number" name="maxPrice" value="<%= filters.maxPrice || '' %>" placeholder="50000" /></label>
+        </div>
+        <label>Sort by
+          <select name="sort">
+            <option value="latest" <%= (filters.sort || 'latest') === 'latest' ? 'selected' : '' %>>Latest</option>
+            <option value="priceAsc" <%= filters.sort === 'priceAsc' ? 'selected' : '' %>>Price low to high</option>
+            <option value="priceDesc" <%= filters.sort === 'priceDesc' ? 'selected' : '' %>>Price high to low</option>
+            <option value="popular" <%= filters.sort === 'popular' ? 'selected' : '' %>>Most popular</option>
+          </select>
+        </label>
+        <button class="button button-primary" type="submit">Apply filters</button>
+      </form>
+      <div class="filter-chip-group">
+        <% categories.slice(0, 4).forEach((category) => { %>
+          <a class="mini-pill filter-chip" href="/marketplace?category=<%= category %>"><%= category %></a>
+        <% }) %>
+      </div>
+    </aside>
+
+    <div class="results-column">
+      <div class="results-header glass-card">
+        <div>
+          <strong><%= total %> listings found</strong>
+          <p>Clean cards, better pricing visibility, and easier comparison.</p>
+        </div>
+        <a class="button button-secondary" href="/sell">Post your item</a>
+      </div>
+
+      <% if (listings.length === 0) { %>
+        <div class="glass-card empty-card">
+          <h3>No listings matched those filters.</h3>
+          <p>Try a broader search, remove a price limit, or switch to another city.</p>
+        </div>
+      <% } %>
+
+      <div class="listing-grid">
+        <% listings.forEach((listing) => { %><%- include('partials/listing-card', { listing }) %><% }) %>
+      </div>
+
+      <div class="pagination-row">
+        <% for (let page = 1; page <= pagination.totalPages; page += 1) { %>
+          <a class="pagination-pill <%= page === pagination.page ? 'active' : '' %>" href="/marketplace?<%= new URLSearchParams({ ...filters, page }).toString() %>"><%= page %></a>
+        <% } %>
+      </div>
+    </div>
+  </section>
+</main>
+<%- include('partials/footer') %>
